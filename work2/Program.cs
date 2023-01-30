@@ -1,16 +1,28 @@
 ﻿// Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+int number = new Random().Next(10, 1000000);
+System.Console.WriteLine(number);
 
-int num = (SumInNumbers(new Random().Next(10, 1000000)));
-System.Console.WriteLine( "num = {num}");
+int len = NumberLen(number);
+SumInNumbers(number, len);
 
-static void SumInNumbers(int num);
+int NumberLen(int a)
 {
-    System.Console.WriteLine(num);
-    int count = 0;
-    while (num > 0)
+    int index = 0;
+    while (a > 0)
     {
-        count++;
-        num += 10;
+        a /= 10;
+        index++;
     }
-    return count;
+    return index;
+}
+
+void SumInNumbers(int n, int len)
+{
+    int sum = 0;
+    for (int i = 1; i <= len; i++)
+    {
+        sum += n % 10;
+        n /= 10;
+    }
+    Console.WriteLine(sum);
 }
