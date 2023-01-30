@@ -1,4 +1,5 @@
 ﻿// Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+
 int number = new Random().Next(10, 1000000);
 System.Console.WriteLine(number);
 
